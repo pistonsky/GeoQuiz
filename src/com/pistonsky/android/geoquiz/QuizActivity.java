@@ -14,6 +14,8 @@ public class QuizActivity extends Activity {
 	
 	private static final String TAG = "QuizActivity";
 	
+	private static final String KEY_INDEX = "index";
+	
 	private Button mTrueButton;
 	private Button mFalseButton;
 	private ImageButton mPrevButton;
@@ -106,6 +108,13 @@ public class QuizActivity extends Activity {
 		updateQuestion();
 	}
 
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState) {
+		super.onSaveInstanceState(savedInstanceState);
+		Log.i(TAG, "onSaveInstanceState");
+		savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+	}
+	
 	@Override
 	protected void onStart() {
 		super.onStart();
