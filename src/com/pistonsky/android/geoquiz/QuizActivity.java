@@ -105,6 +105,10 @@ public class QuizActivity extends Activity {
 			}
 		});
 		
+		if (savedInstanceState != null) {
+			mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+		}
+		
 		updateQuestion();
 	}
 
