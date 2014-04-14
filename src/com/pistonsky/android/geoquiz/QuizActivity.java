@@ -53,6 +53,14 @@ public class QuizActivity extends Activity {
 		
 		// set up the question text view
 		mQuestionTextView = (TextView)findViewById(R.id.question_text_view);
+		mQuestionTextView.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+				updateQuestion();
+			}
+		});
 		
 		// get the references to widgets
 		mTrueButton = (Button)findViewById(R.id.true_button);
